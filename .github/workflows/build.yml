@@ -18,7 +18,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1
+            OPENSBI_BRANCH: sg204x-v1.9
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: linuxboot
             EDK2_BRANCH: upstream/dt/sg2042
@@ -27,7 +27,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1
+            OPENSBI_BRANCH: sg204x-v1.9
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: edk2
             EDK2_BRANCH: upstream/dt/sg2042
@@ -45,7 +45,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1
+            OPENSBI_BRANCH: sg204x-v1.9
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: linuxboot
             EDK2_BRANCH: upstream/dt/sg2044
@@ -54,7 +54,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1-rva23
+            OPENSBI_BRANCH: sg204x-v1.9-rva23
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: linuxboot
             EDK2_BRANCH: upstream/dt/sg2044
@@ -63,7 +63,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1
+            OPENSBI_BRANCH: sg204x-v1.9
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: edk2
             EDK2_BRANCH: upstream/dt/sg2044
@@ -72,7 +72,7 @@ jobs:
             M_CHIP_NUM: single
             LINUX_BRANCH: revyos/6.18.y
             LINUX_REPO: revyos/linux
-            OPENSBI_BRANCH: sg204x-v1.8.1-rva23
+            OPENSBI_BRANCH: sg204x-v1.9-rva23
             OPENSBI_REPO: revyos/opensbi
             FIRMWARE: edk2
             EDK2_BRANCH: upstream/dt/sg2044
