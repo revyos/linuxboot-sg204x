@@ -243,10 +243,10 @@ edk2_build() {
         (
             cd "${EDK2_DIR}" || exit 1
             export WORKSPACE=$(pwd)
-            export GCC5_RISCV64_PREFIX=riscv64-unknown-elf-
 
             if [ "${CHIP}" = "sg2042" ]; then
                 echo "  Configuring and Building for SG2042..."
+                export GCC5_RISCV64_PREFIX=${CROSS_COMPILE}
                 export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms:$WORKSPACE/edk2-non-osi
 		source edk2/edksetup.sh || { echo "Error: edksetup.sh failed."; exit 1; }
 		make -C edk2/BaseTools || { echo "Error: BaseTools build failed."; exit 1; }
@@ -255,12 +255,13 @@ edk2_build() {
                 cp -v "$WORKSPACE/Build/${PLAT}/RELEASE_GCC5/FV/${PLAT^^}.fd" "${OUT}/SG2042.fd" || { echo "Error: Failed to copy SG2042.fd."; exit 1; }
             elif [ "${CHIP}" = "sg2044" ]; then
                 echo "  Configuring and Building for SG2044..."
+                export GCC_RISCV64_PREFIX=${CROSS_COMPILE}
                 export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms:$WORKSPACE/edk2-non-osi:$WORKSPACE/external-modules
                 source edk2/edksetup.sh || { echo "Error: edksetup.sh failed."; exit 1; }
                 make -C edk2/BaseTools || { echo "Error: BaseTools build failed."; exit 1; }
-                build -a RISCV64 -t GCC5 -b RELEASE \
+                build -a RISCV64 -t GCC -b RELEASE \
                       -p Platform/Sophgo/SG2044Pkg/${PLAT}/${PLAT}.dsc || { echo "Error: SG2044 build failed."; exit 1; }
-                cp -v "$WORKSPACE/Build/${PLAT}/RELEASE_GCC5/FV/${PLAT^^}.fd" "${OUT}/SG2044.fd" || { echo "Error: Failed to copy SG2044.fd."; exit 1; }
+                cp -v "$WORKSPACE/Build/${PLAT}/RELEASE_GCC/FV/${PLAT^^}.fd" "${OUT}/SG2044.fd" || { echo "Error: Failed to copy SG2044.fd."; exit 1; }
             fi
         ) || exit 1
         echo "--- EDK2 build complete ---"
